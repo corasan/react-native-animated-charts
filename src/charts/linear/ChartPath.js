@@ -476,6 +476,7 @@ export default function ChartPathProvider({
         prevSmoothing,
         progress,
         smoothingStrategy,
+        setCurrentValues,
         state,
       }}
       {...rest}
@@ -506,6 +507,7 @@ function ChartPath({
   layoutSize,
   __disableRendering,
   children,
+  setCurrentValues,
   ...props
 }) {
   const smoothingWhileTransitioningEnabledValue = useSharedValue(
