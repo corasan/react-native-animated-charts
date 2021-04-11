@@ -150,6 +150,7 @@ export default function ChartPathProvider({
   timingFeedbackConfig = {},
   timingAnimationConfig = {},
   children,
+  setCurrentValues,
   ...rest
 }) {
   const valuesStore = useRef(null);
@@ -331,6 +332,7 @@ export default function ChartPathProvider({
         curroriginalData
       );
       positionX.value = eventX;
+      Animated.runOnJS(setCurrentValues)({ x: originalX.value, y: originalY.value })
     },
     onCancel: event => {
       isStarted.value = false;
